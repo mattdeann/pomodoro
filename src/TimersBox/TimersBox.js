@@ -9,9 +9,9 @@ import Timer from "../Timer/Timer"
 function TimersBox() {
   return (
     <div className="timers-box">
-      <Timer />
-      <Timer />
-      <Timer />
+      <Timer type="Work" duration="30:00"/>
+      <Timer type="Short Break" duration="5:00"/>
+      <Timer type="Long Break" duration="20:00"/>
     </div>
   )
 }

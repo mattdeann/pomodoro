@@ -1,3 +1,18 @@
 .timer {
+  padding: 5rem;
   background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.start-button {
+  height: 3rem;
+  width: 6rem;
+
+}
+
+.start-button:hover {
+  background-color: blueviolet;
 }
