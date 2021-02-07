@@ -6,9 +6,6 @@ import ShortBreakTimer from "../Timers/ShortBreakTimer"
 import LongBreakTimer from "../Timers/LongBreakTimer"
 
 
-// the timers box will have three timers
-
-
 class TimersBox extends React.Component {
   constructor() {
     super()
