@@ -1,4 +1,5 @@
 import React from "react"
+import soundFile from '../assets/alert.mp3'
 import "./TimersBox.css"
 import WorkTimer from "../Timers/WorkTimer"
 import ShortBreakTimer from "../Timers/ShortBreakTimer"
@@ -12,7 +13,7 @@ class TimersBox extends React.Component {
   constructor() {
     super()
     this.state = {
-      workTime: 1800,
+      workTime: 2,
       shortTime: 300,
       longTime: 1200,
       canPress: "auto",
@@ -33,6 +34,7 @@ class TimersBox extends React.Component {
   }
 
   countDown = (timer, timerType) => {
+    const sound = document.getElementsByClassName("times-up")[0]
     const newTime = this.state[timerType] - 1
 
     this.setState({
@@ -45,7 +47,7 @@ class TimersBox extends React.Component {
         canPress: "auto",
         [timerType]: this.state.storedTime
       })
-      alert("Times Up!", 1000);
+      sound.play()
     }
   }
 
@@ -60,7 +62,6 @@ class TimersBox extends React.Component {
 
   formatTime = (time) => {
     const minutes = Math.floor(time / 60)
-    console.log(minutes)
     const seconds = time % 60
     const formattedSeconds = seconds - 10 < 0 ? `0${seconds}` : seconds
 
@@ -74,6 +75,9 @@ class TimersBox extends React.Component {
 
     return (
       <section className="timers-box">
+        <audio className="times-up">
+            <source src={soundFile} type="audio/mpeg" />
+        </audio>
         <WorkTimer 
           workTime={formattedWork} 
           startTimer={this.startTimer} 
