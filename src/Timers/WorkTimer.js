@@ -7,16 +7,18 @@ function WorkTimer({workTime, handleClick, increment, decrement}) {
       <h1 className="timer-type">
         Work
       </h1>
-      <button onClick={decrement} className="decrement">
-        -
-      </button>
-      <h1 className="duration">{workTime}</h1>
-      <button onClick={increment} className="increment">
-        +
-      </button>
-      <button onClick={handleClick} className="start-button">
+      <section className="count-area">
+        <article onClick={decrement} className="decrement">
+          -
+        </article>
+        <h1 className="duration">{workTime}</h1>
+        <article onClick={increment} className="increment">
+          +
+        </article>
+      </section>
+      <article onClick={handleClick} className="start-button">
         Start
-      </button>
+      </article>
     </div>
   )
 }

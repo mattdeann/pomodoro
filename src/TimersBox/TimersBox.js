@@ -28,6 +28,7 @@ class TimersBox extends React.Component {
 
   countDown = (timer) => {
     const newWorkTime = this.state.workTime - 1
+
     this.setState({
       workTime: newWorkTime
     })
@@ -40,8 +41,6 @@ class TimersBox extends React.Component {
   handleClick = () => {
     let timer = setInterval(() => this.countDown(timer), 1000)
   }
-
-
 
   render() {
     return (
