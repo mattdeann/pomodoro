@@ -20,15 +20,15 @@ class TimersBox extends React.Component {
     }
   }
 
-  increment = () => {
+  increment = (timerType) => {
     this.setState(prevState => ({
-      workTime: prevState.workTime += 1
+      [timerType]: prevState[timerType] += 1
     }))
   }
 
-  decrement = () => {
+  decrement = (timerType) => {
     this.setState(prevState => ({
-      workTime: prevState.workTime -= 1
+      [timerType]: prevState[timerType] -= 1
     }))
   }
 

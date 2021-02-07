@@ -8,11 +8,11 @@ function WorkTimer({workTime, startTimer, increment, decrement, canPress}) {
         Work
       </h1>
       <section className="count-area">
-        <article style={{pointerEvents: canPress}} onClick={decrement} className="decrement">
+        <article style={{pointerEvents: canPress}} onClick={() => decrement("workTime")} className="decrement">
           -
         </article>
         <h1 className="duration">{workTime}</h1>
-        <article style={{pointerEvents: canPress}} onClick={increment} className="increment">
+        <article style={{pointerEvents: canPress}} onClick={() => increment("workTime")} className="increment">
           +
         </article>
       </section>

@@ -6,6 +6,6 @@
   grid-template-rows: 1fr;
   grid-gap: 2rem;
   border-radius: 30px;
-  box-shadow: .3rem .3rem .5rem #c8d0e7, 
-  -.3rem -.3rem .5rem #ffffff;
+  box-shadow: .3rem .3rem .5rem #222428, 
+  -.3rem -.3rem .5rem #363a3f;
 }
