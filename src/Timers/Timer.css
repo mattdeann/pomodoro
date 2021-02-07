@@ -1,10 +1,25 @@
 .timer {
-  padding: 5rem;
-  background-color: red;
+  height: 40vh;
+  width: 20vw;
+  padding: 1rem;
+  border-radius: 30px;
+  box-shadow: inset .3rem .3rem .5rem #c8d0e7, 
+  inset -.3rem -.3rem .5rem #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+.timer-type {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  font-size: smaller;
+  padding: 0.5rem;
+  border-radius: 30px;
+  box-shadow: .3rem .3rem .5rem #c8d0e7, 
+  -.3rem -.3rem .5rem #ffffff;
 }
 
 .count-area {
@@ -13,22 +28,32 @@
 }
 
 .duration {
-  margin: 3rem;
+  font-size: small;
+  margin-left: 3rem;
+  margin-right: 3rem;
 }
 
 .decrement,
 .increment {
-  width: 2rem;
-  height: 2rem;
-  border: 1px solid black;
+  width: 1.5rem;
+  height: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 30px;
+  box-shadow: .3rem .3rem .5rem #c8d0e7, 
+  -.3rem -.3rem .5rem #ffffff;
 }
 
 .decrement:hover,
-.increment:hover {
+.increment:hover,
+.start-button:hover {
   cursor: pointer;
+  background-color: #e5e7ee;
+  box-shadow: .3rem .3rem .5rem #c8d0e7, 
+  -.3rem -.3rem .5rem #ffffff,
+  inset.3rem .3rem .5rem #c8d0e7, 
+  inset -.3rem -.3rem .5rem #ffffff;
 }
 
 .start-button {
@@ -37,9 +62,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
-}
-
-.start-button:hover {
-  background-color: blueviolet;
+  border-radius: 30px;
+  box-shadow: .3rem .3rem .5rem #c8d0e7, 
+  -.3rem -.3rem .5rem #ffffff;
 }

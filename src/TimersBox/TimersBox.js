@@ -46,6 +46,8 @@ class TimersBox extends React.Component {
     return (
       <div className="timers-box">
         <WorkTimer workTime={this.state.workTime} handleClick={this.handleClick} increment={this.increment} decrement={this.decrement} />
+        <WorkTimer workTime={this.state.workTime} handleClick={this.handleClick} increment={this.increment} decrement={this.decrement} />
+        <WorkTimer workTime={this.state.workTime} handleClick={this.handleClick} increment={this.increment} decrement={this.decrement} />
       </div>
     )
   }
