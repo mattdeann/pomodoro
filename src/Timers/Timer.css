@@ -1,0 +1,45 @@
+.timer {
+  padding: 5rem;
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.count-area {
+  display: flex;
+  align-items: center;
+}
+
+.duration {
+  margin: 3rem;
+}
+
+.decrement,
+.increment {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.decrement:hover,
+.increment:hover {
+  cursor: pointer;
+}
+
+.start-button {
+  height: 3rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.start-button:hover {
+  background-color: blueviolet;
+}

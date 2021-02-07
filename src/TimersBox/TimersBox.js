@@ -1,19 +1,54 @@
 import React from "react"
 import "./TimersBox.css"
-import Timer from "../Timer/Timer"
+import WorkTimer from "../Timers/WorkTimer"
 
 
 // the timers box will have three timers
 
 
-function TimersBox() {
-  return (
-    <div className="timers-box">
-      <Timer type="Work" duration="30:00"/>
-      <Timer type="Short Break" duration="5:00"/>
-      <Timer type="Long Break" duration="20:00"/>
-    </div>
-  )
+class TimersBox extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      workTime: 5
+    }
+  }
+
+  increment = () => {
+    this.setState(prevState => ({
+      workTime: prevState.workTime += 1
+    }))
+  }
+
+  decrement = () => {
+    this.setState(prevState => ({
+      workTime: prevState.workTime -= 1
+    }))
+  }
+
+  countDown = (timer) => {
+    const newWorkTime = this.state.workTime - 1
+
+    this.setState({
+      workTime: newWorkTime
+    })
+
+    if (newWorkTime <= 0) {
+      clearInterval(timer)
+    }
+  }
+
+  handleClick = () => {
+    let timer = setInterval(() => this.countDown(timer), 1000)
+  }
+
+  render() {
+    return (
+      <div className="timers-box">
+        <WorkTimer workTime={this.state.workTime} handleClick={this.handleClick} increment={this.increment} decrement={this.decrement} />
+      </div>
+    )
+  }
 }
 
 export default TimersBox
