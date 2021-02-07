@@ -14,7 +14,9 @@ class TimersBox extends React.Component {
     this.state = {
       workTime: 3,
       shortTime: 5,
-      longTime: 20
+      longTime: 20,
+      canPress: "auto",
+      storedTime: 0
     }
   }
 
@@ -39,11 +41,19 @@ class TimersBox extends React.Component {
 
     if (newTime <= 0) {
       clearInterval(timer)
+      this.setState({
+        canPress: "auto"
+      })
+      alert("Times Up!", 1000);
     }
   }
 
-  handleClick = (timerType) => {
-    
+  startTimer = (timerType) => {
+    this.setState({
+      canPress: "none",
+      storedTime: this.state[timerType]
+    })
+
     let timer = setInterval(() => this.countDown(timer, timerType), 1000)
   }
 
@@ -52,22 +62,24 @@ class TimersBox extends React.Component {
       <section className="timers-box">
         <WorkTimer 
           workTime={this.state.workTime} 
-          handleClick={this.handleClick} 
+          startTimer={this.startTimer} 
           increment={this.increment} 
           decrement={this.decrement} 
-
+          canPress={this.state.canPress}
         />
         <ShortBreakTimer 
           shortTime={this.state.shortTime}
-          handleClick={this.handleClick}
+          startTimer={this.startTimer}
           increment={this.increment}
           decrement={this.decrement}
+          canPress={this.state.canPress}
         />
         <LongBreakTimer 
           longTime={this.state.longTime}
-          handleClick={this.handleClick}
+          startTimer={this.startTimer}
           increment={this.increment}
           decrement={this.decrement}
+          canPress={this.state.canPress}
         />
       </section>
     )

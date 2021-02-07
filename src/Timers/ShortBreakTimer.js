@@ -1,7 +1,7 @@
 import React from "react"
 import './Timer.css'
 
-function ShortBreakTimer({shortTime, handleClick, increment, decrement}) {
+function ShortBreakTimer({shortTime, startTimer, increment, decrement, canPress}) {
   return (
     <div className="timer">
       <h1 className="timer-type">
@@ -16,7 +16,7 @@ function ShortBreakTimer({shortTime, handleClick, increment, decrement}) {
           +
         </article>
       </section>
-      <article onClick={() => handleClick("shortTime")} className="start-button">
+      <article style={{pointerEvents: canPress}} onClick={() => startTimer("shortTime")} className="start-button">
         Start
       </article>
     </div>

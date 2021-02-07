@@ -1,7 +1,7 @@
 import React from "react"
 import './Timer.css'
 
-function LongBreakTimer({longTime, handleClick, increment, decrement}) {
+function LongBreakTimer({longTime, startTimer, increment, decrement, canPress}) {
   return (
     <div className="timer">
       <h1 className="timer-type">
@@ -16,7 +16,7 @@ function LongBreakTimer({longTime, handleClick, increment, decrement}) {
           +
         </article>
       </section>
-      <article onClick={() => handleClick("longTime")} className="start-button">
+      <article style={{pointerEvents: canPress}} onClick={() => startTimer("longTime")} className="start-button">
         Start
       </article>
     </div>

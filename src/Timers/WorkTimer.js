@@ -1,7 +1,7 @@
 import React from "react"
 import './Timer.css'
 
-function WorkTimer({workTime, handleClick, increment, decrement}) {
+function WorkTimer({workTime, startTimer, increment, decrement, canPress}) {
   return (
     <div className="timer">
       <h1 className="timer-type">
@@ -16,7 +16,7 @@ function WorkTimer({workTime, handleClick, increment, decrement}) {
           +
         </article>
       </section>
-      <article onClick={() => handleClick("workTime")} className="start-button">
+      <article style={{pointerEvents: canPress}} onClick={() => startTimer("workTime")} className="start-button">
         Start
       </article>
     </div>
