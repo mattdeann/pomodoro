@@ -13,11 +13,12 @@ class TimersBox extends React.Component {
   constructor() {
     super()
     this.state = {
-      workTime: 2,
+      workTime: 1,
       shortTime: 300,
       longTime: 1200,
       canPress: "auto",
-      storedTime: 0
+      storedTime: 0,
+      tracker: []
     }
   }
 
@@ -43,11 +44,14 @@ class TimersBox extends React.Component {
 
     if (newTime <= 0) {
       clearInterval(timer)
-      this.setState({
+      const dot = `${timerType}Dot`
+      this.setState((prevState) => ({
         canPress: "auto",
-        [timerType]: this.state.storedTime
-      })
+        [timerType]: this.state.storedTime,
+        tracker: [...prevState.tracker, dot]
+      }))
       sound.play()
+      console.log(this.state.tracker)
     }
   }
 
@@ -68,17 +72,38 @@ class TimersBox extends React.Component {
     return `${minutes.toFixed()} : ${formattedSeconds}`
   }
 
+  // need to change background color of dot depending on what timer was clicked
+  // store three values in the function (one for each color for each timer) and pass that color 
+
+  renderDots = () => {
+    const dotsArray = [<p>"workTimeDot"</p>]
+
+    for (let i = 0; i < 6; i++) {
+      console.log(this.state.tracker[i])
+      return (
+        this.state.tracker[i] ? <p></p> : <p></p>
+      )
+    }
+
+    return dotsArray
+  }
+
   render() {
     const formattedWork = this.formatTime(this.state.workTime);
     const formattedShort = this.formatTime(this.state.shortTime);
     const formattedLong = this.formatTime(this.state.longTime);
+    const dots = this.renderDots()
 
     return (
       <section className="timers-box">
         <audio className="times-up">
             <source src={soundFile} type="audio/mpeg" />
         </audio>
-        <WorkTimer 
+        <article className="tracker">
+          {dots}
+        </article>
+        <WorkTimer
+          className="timer"
           workTime={formattedWork} 
           startTimer={this.startTimer} 
           increment={this.increment} 
@@ -86,6 +111,7 @@ class TimersBox extends React.Component {
           canPress={this.state.canPress}
         />
         <ShortBreakTimer 
+          className="timer"
           shortTime={formattedShort}
           startTimer={this.startTimer}
           increment={this.increment}
@@ -93,6 +119,7 @@ class TimersBox extends React.Component {
           canPress={this.state.canPress}
         />
         <LongBreakTimer 
+          className="timer"
           longTime={formattedLong}
           startTimer={this.startTimer}
           increment={this.increment}

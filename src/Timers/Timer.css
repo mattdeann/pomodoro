@@ -3,8 +3,8 @@
   width: 20vw;
   padding: 1rem;
   border-radius: 30px;
-  box-shadow: inset .3rem .3rem .5rem #292d32, 
-  inset -.3rem -.3rem .5rem #292d32;;
+  box-shadow: inset .3rem .3rem .5rem #222428, 
+  inset -.3rem -.3rem .5rem #363a3f;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -17,9 +17,10 @@
   width: 70%;
   font-size: smaller;
   padding: 0.5rem;
+  margin-bottom: 0;
   border-radius: 30px;
-  box-shadow: .3rem .3rem .5rem #292d32, 
-  -.3rem -.3rem .5rem #292d32;
+  box-shadow: .3rem .3rem .5rem #222428, 
+  -.3rem -.3rem .5rem #363a3f;
 }
 
 .count-area {
@@ -30,9 +31,9 @@
 .duration {
   font-size: small;
   height: 2rem;
-  width: 5rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  width: 4rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
   border-radius: 30px;
   box-shadow: .3rem .3rem .5rem #222428, 
    -.3rem -.3rem .5rem #363a3f;
@@ -64,8 +65,8 @@
 }
 
 .start-button {
-  height: 3rem;
-  width: 6rem;
+  height: 2rem;
+  width: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
