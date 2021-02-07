@@ -8,11 +8,11 @@ function ShortBreakTimer({shortTime, startTimer, increment, decrement, canPress}
         Short Break
       </h1>
       <section className="count-area">
-        <article onClick={decrement} className="decrement">
+        <article style={{pointerEvents: canPress}} onClick={decrement} className="decrement">
           -
         </article>
         <h1 className="duration">{shortTime}</h1>
-        <article onClick={increment} className="increment">
+        <article style={{pointerEvents: canPress}} onClick={increment} className="increment">
           +
         </article>
       </section>

@@ -8,11 +8,11 @@ function LongBreakTimer({longTime, startTimer, increment, decrement, canPress}) 
         Long Break
       </h1>
       <section className="count-area">
-        <article onClick={decrement} className="decrement">
+        <article style={{pointerEvents: canPress}} onClick={decrement} className="decrement">
           -
         </article>
         <h1 className="duration">{longTime}</h1>
-        <article onClick={increment} className="increment">
+        <article style={{pointerEvents: canPress}} onClick={increment} className="increment">
           +
         </article>
       </section>

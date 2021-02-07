@@ -42,7 +42,8 @@ class TimersBox extends React.Component {
     if (newTime <= 0) {
       clearInterval(timer)
       this.setState({
-        canPress: "auto"
+        canPress: "auto",
+        [timerType]: this.state.storedTime
       })
       alert("Times Up!", 1000);
     }
