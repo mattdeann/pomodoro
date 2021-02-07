@@ -12,9 +12,9 @@ class TimersBox extends React.Component {
   constructor() {
     super()
     this.state = {
-      workTime: 3,
-      shortTime: 5,
-      longTime: 20,
+      workTime: 1800,
+      shortTime: 300,
+      longTime: 1200,
       canPress: "auto",
       storedTime: 0
     }
@@ -22,13 +22,13 @@ class TimersBox extends React.Component {
 
   increment = (timerType) => {
     this.setState(prevState => ({
-      [timerType]: prevState[timerType] += 1
+      [timerType]: prevState[timerType] += 60
     }))
   }
 
   decrement = (timerType) => {
     this.setState(prevState => ({
-      [timerType]: prevState[timerType] -= 1
+      [timerType]: prevState[timerType] -= 60
     }))
   }
 
@@ -58,25 +58,38 @@ class TimersBox extends React.Component {
     let timer = setInterval(() => this.countDown(timer, timerType), 1000)
   }
 
+  formatTime = (time) => {
+    const minutes = Math.floor(time / 60)
+    console.log(minutes)
+    const seconds = time % 60
+    const formattedSeconds = seconds - 10 < 0 ? `0${seconds}` : seconds
+
+    return `${minutes.toFixed()} : ${formattedSeconds}`
+  }
+
   render() {
+    const formattedWork = this.formatTime(this.state.workTime);
+    const formattedShort = this.formatTime(this.state.shortTime);
+    const formattedLong = this.formatTime(this.state.longTime);
+
     return (
       <section className="timers-box">
         <WorkTimer 
-          workTime={this.state.workTime} 
+          workTime={formattedWork} 
           startTimer={this.startTimer} 
           increment={this.increment} 
           decrement={this.decrement} 
           canPress={this.state.canPress}
         />
         <ShortBreakTimer 
-          shortTime={this.state.shortTime}
+          shortTime={formattedShort}
           startTimer={this.startTimer}
           increment={this.increment}
           decrement={this.decrement}
           canPress={this.state.canPress}
         />
         <LongBreakTimer 
-          longTime={this.state.longTime}
+          longTime={formattedLong}
           startTimer={this.startTimer}
           increment={this.increment}
           decrement={this.decrement}
