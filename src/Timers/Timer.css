@@ -49,11 +49,10 @@
 .increment:hover,
 .start-button:hover {
   cursor: pointer;
-  background-color: #e5e7ee;
   box-shadow: .3rem .3rem .5rem #c8d0e7, 
   -.3rem -.3rem .5rem #ffffff,
-  inset.3rem .3rem .5rem #c8d0e7, 
-  inset -.3rem -.3rem .5rem #ffffff;
+  inset .1rem .1rem .5rem #c8d0e7, 
+  inset -.1rem -.1rem .5rem #ffffff;
 }
 
 .start-button {
