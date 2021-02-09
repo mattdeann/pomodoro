@@ -11,8 +11,8 @@ class TimersBox extends React.Component {
   constructor() {
     super()
     this.state = {
-      workTime: 1,
-      shortTime: 1,
+      workTime: 1800,
+      shortTime: 300,
       longTime: 1200,
       canPress: "auto",
       storedTime: 0,
