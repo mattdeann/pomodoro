@@ -1,25 +1,27 @@
 .timer {
-  height: 40vh;
-  width: 20vw;
-  padding: 1rem;
+  height: 30vh;
+  /* padding: 1rem; */
   border-radius: 30px;
   box-shadow: inset .3rem .3rem .5rem #222428, 
   inset -.3rem -.3rem .5rem #363a3f;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .timer-type {
   display: flex;
   justify-content: center;
+  font-size: small;
   width: 70%;
   padding: 0.5rem;
+  padding-top: 1rem;
   margin-bottom: 0;
   border-radius: 30px;
   box-shadow: .3rem .3rem .5rem #222428, 
-  -.3rem -.3rem .5rem #363a3f;
+  -.2rem -.1rem .3rem #363a3f;
+  z-index: 1;
 }
 
 .count-area {
@@ -29,12 +31,12 @@
 
 .duration {
   height: 2rem;
-  width: 4rem;
+  width: 7rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   border-radius: 30px;
   box-shadow: .3rem .3rem .5rem #222428, 
-   -.3rem -.3rem .5rem #363a3f;
+   -.2rem -.1rem .3rem #363a3f;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -49,7 +51,7 @@
   align-items: center;
   border-radius: 30px;
   box-shadow: .3rem .3rem .5rem #222428, 
-  -.3rem -.3rem .5rem #363a3f;
+   -.2rem -.1rem .3rem #363a3f;
 }
 
 .decrement:hover,
@@ -57,7 +59,7 @@
 .start-button:hover {
   cursor: pointer;
   box-shadow: .3rem .3rem .5rem #222428, 
-  -.3rem -.3rem .5rem #363a3f,
+   -.2rem -.1rem .3rem #363a3f,
   inset .1rem .1rem .5rem #222428, 
   inset -.1rem -.1rem .5rem #363a3f;
 }
@@ -70,5 +72,5 @@
   align-items: center;
   border-radius: 30px;
   box-shadow: .3rem .3rem .5rem #222428, 
-  -.3rem -.3rem .5rem #363a3f;
+   -.2rem -.1rem .3rem #363a3f;
 }

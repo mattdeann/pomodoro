@@ -100,7 +100,7 @@ class TimersBox extends React.Component {
           {dots}
         </article>
         <WorkTimer
-          className="timer"
+          className="work timer"
           workTime={formattedWork} 
           startTimer={this.startTimer} 
           increment={this.increment} 
@@ -108,7 +108,7 @@ class TimersBox extends React.Component {
           canPress={this.state.canPress}
         />
         <ShortBreakTimer 
-          className="timer"
+          className="short timer"
           shortTime={formattedShort}
           startTimer={this.startTimer}
           increment={this.increment}
@@ -116,7 +116,7 @@ class TimersBox extends React.Component {
           canPress={this.state.canPress}
         />
         <LongBreakTimer 
-          className="timer"
+          className="long timer"
           longTime={formattedLong}
           startTimer={this.startTimer}
           increment={this.increment}
