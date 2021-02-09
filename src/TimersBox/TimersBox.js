@@ -86,9 +86,9 @@ class TimersBox extends React.Component {
   }
 
   render() {
-    const formattedWork = this.formatTime(this.state.workTime);
-    const formattedShort = this.formatTime(this.state.shortTime);
-    const formattedLong = this.formatTime(this.state.longTime);
+    const formattedWork = this.formatTime(this.state.workTime)
+    const formattedShort = this.formatTime(this.state.shortTime)
+    const formattedLong = this.formatTime(this.state.longTime)
     const dots = this.renderDots()
 
     return (

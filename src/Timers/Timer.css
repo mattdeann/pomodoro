@@ -15,7 +15,6 @@
   display: flex;
   justify-content: center;
   width: 70%;
-  font-size: smaller;
   padding: 0.5rem;
   margin-bottom: 0;
   border-radius: 30px;
@@ -29,7 +28,6 @@
 }
 
 .duration {
-  font-size: small;
   height: 2rem;
   width: 4rem;
   margin-left: 0.5rem;
