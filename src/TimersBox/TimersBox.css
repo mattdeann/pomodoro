@@ -62,7 +62,7 @@
   inset .3rem .3rem .5rem #c4e5f5
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 700px) and (max-width: 800px) {
 
   .timers-box {
     margin: 1rem;
@@ -105,7 +105,7 @@
   }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 801px) {
 
   .timers-box {
     margin: 1rem;
@@ -126,7 +126,6 @@
     width: 1000px;
     grid-column: 1 / -1;
     width: 60%;
-    
   }
 
   .timer {

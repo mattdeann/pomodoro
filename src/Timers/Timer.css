@@ -13,7 +13,6 @@
 .timer-type {
   display: flex;
   justify-content: center;
-  font-size: small;
   width: 70%;
   padding: 0.5rem;
   padding-top: 1rem;
