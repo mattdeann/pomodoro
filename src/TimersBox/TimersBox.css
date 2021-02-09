@@ -17,11 +17,12 @@
   justify-self: center;
   grid-column: 1 / -1;
   grid-row: 1 / 2;
+  display: flex;
   border-radius: 30px;
   box-shadow: inset .3rem .3rem .5rem #222428, 
   inset -.3rem -.3rem .5rem #363a3f;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .timer {
@@ -69,7 +70,7 @@
   background-color:  #ff4949;
 }
 
-@media only screen and (min-width: 780px) and (max-width: 820px) {
+@media only screen and (min-width: 700px) and (max-width: 849px) {
 
   .timers-box {
     margin: 1rem;
@@ -112,8 +113,7 @@
   }
 }
 
-@media only screen and (min-width: 821px) {
-
+@media only screen and (min-width: 850px) {
   .timers-box {
     margin: 1rem;
     padding: 1rem;
@@ -138,5 +138,18 @@
   .timer {
     grid-row: 2 / 3;
     width: 100%;
+  }
+
+  .work {
+    grid-column: 1 / 2;
+  }
+  
+  .short {
+    grid-column: 2 / 3;
+  
+  }
+  
+  .long {
+    grid-column: 3 / 4;
   }
 }
