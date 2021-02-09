@@ -47,15 +47,28 @@ class TimersBox extends React.Component {
 
   stopTimer = () => {
     const sound = document.getElementsByClassName("times-up")[0]
-    clearInterval(timer)
     const dot = `${this.state.lastTimer}Dot`
-    this.setState((prevState) => ({
-      canPress: "auto",
-      isRunning: false,
-      [prevState.lastTimer]: this.state.storedTime,
-      tracker: [...prevState.tracker, dot]
-    }))
+
+    clearInterval(timer)
+
+    if (this.state.tracker.length >= 12) {
+      this.setState((prevState) => ({
+        canPress: "auto",
+        isRunning: false,
+        [prevState.lastTimer]: this.state.storedTime,
+        tracker: [dot]
+      }))
+    } else {
+      this.setState((prevState) => ({
+        canPress: "auto",
+        isRunning: false,
+        [prevState.lastTimer]: this.state.storedTime,
+        tracker: [...prevState.tracker, dot]
+      }))
+    }
+
     this.renderDots()
+
     sound.play()
   }
 
