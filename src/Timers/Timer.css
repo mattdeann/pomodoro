@@ -43,6 +43,7 @@
 
 .decrement,
 .increment {
+  transition: 2s;
   width: 1.5rem;
   height: 1.5rem;
   display: flex;
@@ -51,6 +52,11 @@
   border-radius: 30px;
   box-shadow: .3rem .3rem .5rem #222428, 
    -.2rem -.1rem .3rem #363a3f;
+  transition: all 1s ease;
+}
+
+.start-button {
+  transition: all 1.5s ease;
 }
 
 .decrement:hover,
