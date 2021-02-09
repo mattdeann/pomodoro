@@ -23,6 +23,7 @@
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
+
 .timer {
   justify-self: center;
   width: 100%;
@@ -45,21 +46,27 @@
 }
 
 .workTimeDot,
-.short-dot,
-.long-dot {
+.shortTimeDot,
+.longTimeDot {
   height: 1rem;
   width: 1rem;
   margin-right: 0.5rem;
   border-radius: 30px;
   box-shadow: .3rem .3rem .5rem #222428, 
-  -.3rem -.3rem .5rem #363a3f
+  -.3rem -.3rem .5rem #363a3f,
+  inset .3rem .3rem .5rem #c4e5f5
 }
 
 .workTimeDot {
   background-color:  #49c6ff;
-  box-shadow: .3rem .3rem .5rem #222428, 
-  -.3rem -.3rem .5rem #363a3f,
-  inset .3rem .3rem .5rem #c4e5f5
+}
+
+.shortTimeDot {
+  background-color:  #fff349;
+}
+
+.longTimeDot {
+  background-color:  #ff4949;
 }
 
 @media only screen and (min-width: 780px) and (max-width: 820px) {

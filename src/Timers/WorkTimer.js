@@ -3,7 +3,7 @@ import './Timer.css'
 
 function WorkTimer({workTime, startTimer, increment, decrement, canPress, isRunning, stopTimer}) {
   return (
-    <div className="timer">
+    <div className="work timer">
       <h1 className="timer-type">
         Work
       </h1>

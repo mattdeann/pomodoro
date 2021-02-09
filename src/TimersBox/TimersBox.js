@@ -11,8 +11,8 @@ class TimersBox extends React.Component {
   constructor() {
     super()
     this.state = {
-      workTime: 1800,
-      shortTime: 300,
+      workTime: 1,
+      shortTime: 1,
       longTime: 1200,
       canPress: "auto",
       storedTime: 0,
@@ -55,6 +55,7 @@ class TimersBox extends React.Component {
       [prevState.lastTimer]: this.state.storedTime,
       tracker: [...prevState.tracker, dot]
     }))
+    this.renderDots()
     sound.play()
   }
 
@@ -82,13 +83,11 @@ class TimersBox extends React.Component {
   // store three values in the function (one for each color for each timer) and pass that color 
 
   renderDots = () => {
-    const dotsArray = [<p>"workTimeDot"</p>]
-    for (let i = 0; i < 6; i++) {
+    const dotsArray = this.state.tracker.map(item => {
       return (
-        this.state.tracker[i] ? <p></p> : <p></p>
+        <p className={item}></p>
       )
-    }
-
+    })
     return dotsArray
   }
 

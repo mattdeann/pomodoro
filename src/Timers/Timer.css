@@ -23,6 +23,18 @@
   z-index: 1;
 }
 
+.work {
+  color:  #49c6ff;
+}
+
+.short {
+  color:  #fff349;
+}
+
+.long {
+  color:  #ff4949;
+}
+
 .count-area {
   display: flex;
   align-items: center;

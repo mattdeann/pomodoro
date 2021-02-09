@@ -3,7 +3,7 @@ import './Timer.css'
 
 function LongBreakTimer({longTime, startTimer, increment, decrement, canPress, isRunning, stopTimer}) {
   return (
-    <div className="timer">
+    <div className="long timer">
       <h1 className="timer-type">
         Long Break
       </h1>
