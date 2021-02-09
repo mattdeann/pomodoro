@@ -57,10 +57,12 @@
 .increment:hover,
 .start-button:hover {
   cursor: pointer;
+  color: black;
+  background-color: rgb(235, 191, 140);
   box-shadow: .3rem .3rem .5rem #222428, 
    -.2rem -.1rem .3rem #363a3f,
-  inset .1rem .1rem .5rem #222428, 
-  inset -.1rem -.1rem .5rem #363a3f;
+  inset .2rem .2rem .5rem #222428, 
+  inset -.2rem -.2rem .5rem #363a3f;
 }
 
 .start-button {
