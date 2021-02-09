@@ -5,20 +5,23 @@ import WorkTimer from "../Timers/WorkTimer"
 import ShortBreakTimer from "../Timers/ShortBreakTimer"
 import LongBreakTimer from "../Timers/LongBreakTimer"
 
+let timer;
 
 class TimersBox extends React.Component {
   constructor() {
     super()
     this.state = {
-      workTime: 1,
+      workTime: 2,
       shortTime: 300,
       longTime: 1200,
       canPress: "auto",
       storedTime: 0,
+      lastTimer: null,
+      isRunning: false,
       tracker: []
     }
   }
-
+  
   increment = (timerType) => {
     this.setState(prevState => ({
       [timerType]: prevState[timerType] += 60
@@ -31,8 +34,31 @@ class TimersBox extends React.Component {
     }))
   }
 
-  countDown = (timer, timerType) => {
+  startTimer = (timerType) => {
+    this.setState({
+      canPress: "none",
+      isRunning: true,
+      storedTime: this.state[timerType],
+      lastTimer: timerType
+    })
+
+    timer = setInterval(() => this.countDown(timerType), 1000)
+  }
+
+  stopTimer = () => {
     const sound = document.getElementsByClassName("times-up")[0]
+    clearInterval(timer)
+    const dot = `${this.state.lastTimer}Dot`
+    this.setState((prevState) => ({
+      canPress: "auto",
+      isRunning: false,
+      [prevState.lastTimer]: this.state.storedTime,
+      tracker: [...prevState.tracker, dot]
+    }))
+    sound.play()
+  }
+
+  countDown = (timerType) => {
     const newTime = this.state[timerType] - 1
 
     this.setState({
@@ -40,25 +66,8 @@ class TimersBox extends React.Component {
     })
 
     if (newTime <= 0) {
-      clearInterval(timer)
-      const dot = `${timerType}Dot`
-      this.setState((prevState) => ({
-        canPress: "auto",
-        [timerType]: this.state.storedTime,
-        tracker: [...prevState.tracker, dot]
-      }))
-      sound.play()
-      console.log(this.state.tracker)
+      this.stopTimer(timerType)
     }
-  }
-
-  startTimer = (timerType) => {
-    this.setState({
-      canPress: "none",
-      storedTime: this.state[timerType]
-    })
-
-    let timer = setInterval(() => this.countDown(timer, timerType), 1000)
   }
 
   formatTime = (time) => {
@@ -74,9 +83,7 @@ class TimersBox extends React.Component {
 
   renderDots = () => {
     const dotsArray = [<p>"workTimeDot"</p>]
-
     for (let i = 0; i < 6; i++) {
-      console.log(this.state.tracker[i])
       return (
         this.state.tracker[i] ? <p></p> : <p></p>
       )
@@ -106,6 +113,8 @@ class TimersBox extends React.Component {
           increment={this.increment} 
           decrement={this.decrement} 
           canPress={this.state.canPress}
+          isRunning={this.state.isRunning}
+          stopTimer={this.stopTimer}
         />
         <ShortBreakTimer 
           className="short timer"
@@ -114,6 +123,8 @@ class TimersBox extends React.Component {
           increment={this.increment}
           decrement={this.decrement}
           canPress={this.state.canPress}
+          isRunning={this.state.isRunning}
+          stopTimer={this.stopTimer}
         />
         <LongBreakTimer 
           className="long timer"
@@ -122,6 +133,8 @@ class TimersBox extends React.Component {
           increment={this.increment}
           decrement={this.decrement}
           canPress={this.state.canPress}
+          isRunning={this.state.isRunning}
+          stopTimer={this.stopTimer}
         />
       </section>
     )
